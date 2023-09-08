@@ -1,31 +1,55 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>WebNLP</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  </head>
-  <body>
-    <nav>
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{% url 'home'%}">Home</a>
+<head>
+    <meta charset="UTF-8">
+    <title>Your Django App</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Bootstrap Tabs -->
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Home</button>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'regex' %}">RegEx</a>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="regex-tab" data-bs-toggle="tab" data-bs-target="#regex-tab-pane" type="button" role="tab" aria-controls="regex-tab-pane" aria-selected="false">Regex</button>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'lemma' %}">Lemmatization</a>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="lemma-tab" data-bs-toggle="tab" data-bs-target="#lemma-tab-pane" type="button" role="tab" aria-controls="lemma-tab-pane" aria-selected="false">Lemma</button>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'ner'%}">Named Entity Recognition</a>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pos-tab" data-bs-toggle="tab" data-bs-target="#pos-tab-pane" type="button" role="tab" aria-controls="pos-tab-pane" aria-selected="false">POS</button>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'pos'%}">Part-of-Speech</a>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="ner-tab" data-bs-toggle="tab" data-bs-target="#ner-tab-pane" type="button" role="tab" aria-controls="ner-tab-pane" aria-selected="false">NER</button>
         </li>
-      </ul>
-    </nav>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-  </body>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+            {% block home_content %}
+            {% endblock %}
+        </div>
+        <div class="tab-pane fade" id="regex-tab-pane" role="tabpanel" aria-labelledby="regex-tab" tabindex="0">
+            {% block regex_content %}
+            {% endblock %}
+        </div>
+        <div class="tab-pane fade" id="lemma-tab-pane" role="tabpanel" aria-labelledby="lemma-tab" tabindex="0">
+            {% block lemma_content %}
+            {% endblock %}
+        </div>
+        <div class="tab-pane fade" id="pos-tab-pane" role="tabpanel" aria-labelledby="pos-tab" tabindex="0">
+            {% block pos_content %}
+            {% endblock %}
+        </div>
+        <div class="tab-pane fade" id="ner-tab-pane" role="tabpanel" aria-labelledby="ner-tab" tabindex="0">
+            {% block ner_content %}
+            {% endblock %}
+        </div>
+    </div>
+    {% block content %}
+    {% endblock %}
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
