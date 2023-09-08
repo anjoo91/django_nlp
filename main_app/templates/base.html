@@ -10,20 +10,22 @@
     <nav>
     <ul class="nav nav-tabs">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Active</a>
+          <a class="nav-link active" aria-current="page" href="{% url 'home'%}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="{% url 'regex' %}">RegEx</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="{% url 'lemma' %}">Lemmatization</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          <a class="nav-link" href="{% url 'ner'%}">Named Entity Recognition</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'pos'%}">Part-of-Speech</a>
         </li>
       </ul>
     </nav>
-    <h1>Welcome to WebNLP!</h1>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
   </body>
 </html>
