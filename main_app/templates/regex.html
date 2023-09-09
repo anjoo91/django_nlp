@@ -1,3 +1,23 @@
 {%extends 'base.html'%}
 {%block content%}
+<style>
+    .form-group{
+        width: 50%;
+        margin: 0 auto;
+    }
+</style>
+
+</break>
+</break>
+<div class = "container">
+    <div class="row">
+        <form class="form-group widthx" method="POST" action="{% url 'regex' %}">
+            {% csrf_token %}
+            <label for="exampleFormControlTextarea1"><strong>Enter Text for RegEx (Regular Expression)</strong> </label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="regexform" placeholder="Please Enter Text Here To Perform RegEx Search"></textarea>
+        </break>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
 {% endblock %}
