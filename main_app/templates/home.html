@@ -1,5 +1,79 @@
 {% extends 'base.html' %}
-{% block content %}
-    <h1>Home</h1>
-    <p> Welcome to WebNLP!</p>
+{% block home_content %}
+    <div class="container text-center mt-5">
+        <div class="card">
+            <div class="card-header">
+                <h1 class="display-4 text-primary animate__animated animate__bounce">Welcome to WebNLP</h1>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">An integration of Natural Language Processing (NLP) and Web Development through Django.</h3>
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <h4 class="card-title">What is NLP?</h4>
+                        <p class="card-text">Natural Language Processing (NLP) is a subfield of linguistics, computer science, and artificial intelligence concerned with the interactions between computers and human language.
+                            In particular, how to program computers to process and analyze large amounts of natural language data. Challenges in natural language processing frequently involve speech recognition, natural language understanding, and natural language generation.</p>
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <h4 class="card-title">NLP Tasks</h4>
+                        <p class="card-text">Navigate to the tabs located above to perform NLP tasks such as:</p>
+                        <div class="accordion" id="nlpTaskAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingRegEx">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRegEx" aria-expanded="true" aria-controls="collapseRegEx">
+                                        RegEx (Regular Expressions)
+                                    </button>
+                                </h2>
+                                <div id="collapseRegEx" class="accordion-collapse collapse show" aria-labelledby="headingRegEx" data-bs-parent="#nlpTaskAccordion">
+                                    <div class="accordion-body">
+                                        <p>Regular expressions are sequences of characters that define a search pattern. They are commonly used for string matching within search engines, find-and-replace dialogs of word processors, and input validation.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingLemma">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLemma" aria-expanded="false" aria-controls="collapseLemma">
+                                        Lemmatization
+                                    </button>
+                                </h2>
+                                <div id="collapseLemma" class="accordion-collapse collapse" aria-labelledby="headingLemma" data-bs-parent="#nlpTaskAccordion">
+                                    <div class="accordion-body">
+                                        <p>Lemmatization is the process of reducing inflected words to their word stem, base or root form. Unlike stemming, lemmatization considers the context and part of speech of the word.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingPOS">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePOS" aria-expanded="false" aria-controls="collapsePOS">
+                                        Part of Speech Tagging
+                                    </button>
+                                </h2>
+                                <div id="collapsePOS" class="accordion-collapse collapse" aria-labelledby="headingPOS" data-bs-parent="#nlpTaskAccordion">
+                                    <div class="accordion-body">
+                                        <p>Part of Speech Tagging (POS) is the process of marking each word in a text as corresponding to a particular part of speech, based on its definition and its context.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingNER">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNER" aria-expanded="false" aria-controls="collapseNER">
+                                        Named Entity Recognition
+                                    </button>
+                                </h2>
+                                <div id="collapseNER" class="accordion-collapse collapse" aria-labelledby="headingNER" data-bs-parent="#nlpTaskAccordion">
+                                    <div class="accordion-body">
+                                        <p>Named Entity Recognition (NER) is a subtask of information extraction that classifies named entities into predefined categories such as person names, organizations, locations, expressions of times, quantities, monetary values, percentages, etc.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
+
+<!-- Add Animate.css for animation -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
