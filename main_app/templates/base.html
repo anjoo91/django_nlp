@@ -52,35 +52,23 @@
     {% endblock %}
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- AJAX for Loading Tab Content -->
+    <!-- JavaScript for Navigating to URLs -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Add event listener for each tab
             document.querySelectorAll('.nav-link').forEach(function(tab) {
                 tab.addEventListener('click', function() {
-                    loadTabContent(tab.id);
+                    // Map tabId to Django URL
+                    const urlMap = {
+                        'home-tab': '/',
+                        'regex-tab': '/regex/',
+                        // Add more mappings here
+                    };
+                    // Navigate to the corresponding URL
+                    window.location.href = urlMap[tab.id];
                 });
             });
         });
-
-        function loadTabContent(tabId) {
-            // Map tabId to Django URL
-            const urlMap = {
-                'home-tab': '/',
-                'regex-tab': '/regex/',
-                // Add more mappings here
-            };
-
-            // Fetch content using AJAX
-            fetch(urlMap[tabId])
-            .then(response => response.json())
-            .then(data => {
-                document.querySelector(`#${tabId}-pane`).innerHTML = data.content;
-            })
-            .catch(error => {
-                console.error('Error fetching tab content:', error);
-            });
-        }
     </script>
 </body>
 </html>
