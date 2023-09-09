@@ -7,6 +7,7 @@ def home(request):
     return render(request, 'home.html')
 
 def regex(request):
+    print("Inside regex view")  # Debugging line
     return render(request, 'regex.html')
 
 def lemma(request):

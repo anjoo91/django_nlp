@@ -52,9 +52,25 @@
     {% endblock %}
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- JavaScript for Navigating to URLs -->
+    <!-- JavaScript for Navigating to URLs and Activating Tabs -->
     <script>
+        function activateTabBasedOnUrl() {
+            const urlMap = {
+                '/': 'home-tab',
+                '/regex/': 'regex-tab',
+                // Add more mappings here
+            };
+            const currentUrl = window.location.pathname;
+            const activeTabId = urlMap[currentUrl];
+            if (activeTabId) {
+                const activeTab = document.getElementById(activeTabId);
+                if (activeTab) {
+                    activeTab.click();
+                }
+            }
+        }
         document.addEventListener('DOMContentLoaded', function() {
+            activateTabBasedOnUrl();
             // Add event listener for each tab
             document.querySelectorAll('.nav-link').forEach(function(tab) {
                 tab.addEventListener('click', function() {
