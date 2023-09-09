@@ -58,7 +58,9 @@
             const urlMap = {
                 '/': 'home-tab',
                 '/regex/': 'regex-tab',
-                // Add more mappings here
+                '/lemma/': 'lemma-tab',
+                '/ner/': 'ner-tab',
+                '/pos/': 'pos-tab',
             };
             const currentUrl = window.location.pathname;
             const activeTabId = urlMap[currentUrl];
@@ -78,7 +80,9 @@
                     const urlMap = {
                         'home-tab': '/',
                         'regex-tab': '/regex/',
-                        // Add more mappings here
+                        'lemma-tab': '/lemma/',
+                        'pos-tab': '/pos/',
+                        'ner-tab': '/ner/',
                     };
                     // Navigate to the corresponding URL
                     window.location.href = urlMap[tab.id];
