@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from django.template.loader import render_to_string
 import re
+import spacy
+
 
 # Create your views here.
 def home(request):
@@ -17,7 +19,16 @@ def regex(request):
         return render(request, 'regex.html')
 
 def lemma(request):
-    return render(request, 'lemma.html')
+    nlp = spacy.load('en_core_web_sm')
+    if request.method =="POST":
+        lemma_area = request.POST.get('lemma-form')
+        doc = nlp(lemma_area)
+        lemma_list = []
+        for token in doc:
+            lemma_list.append(token.lemma_)
+        return render(request, 'lemma.html', {'lemma_list': lemma_list})
+    else:
+        return render(request, 'lemma.html')
 
 def pos(request):
     return render(request, 'pos.html')
