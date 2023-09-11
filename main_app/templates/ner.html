@@ -2,7 +2,7 @@
 {% block ner_content %}
     <div class="container mt-5">
         <h1 class="text-center">Named Entity Recognition</h1>
-        <form id="ner-form" class="mt-4">
+        <form id="ner-form" class="mt-4" method="POST" action="{% url 'ner' %}">
             <div class="mb-3">
                 <label for="inputText" class="form-label">Enter Text</label>
                 <textarea class="form-control" id="inputText" rows="3"></textarea>

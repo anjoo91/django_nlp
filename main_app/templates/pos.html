@@ -2,7 +2,7 @@
 {% block pos_content %}
     <div class="container mt-5">
         <h1 class="text-center">Part of Speech Tagging</h1>
-        <form id="pos-form" class="mt-4">
+        <form id="pos-form" class="mt-4" method = "POST" action="{% url 'pos' %}">
             <div class="mb-3">
                 <label for="inputText" class="form-label">Enter Text</label>
                 <textarea class="form-control" id="inputText" rows="3"></textarea>

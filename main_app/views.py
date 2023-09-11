@@ -19,14 +19,12 @@ def regex(request):
         return render(request, 'regex.html')
 
 def lemma(request):
-    nlp = spacy.load('en_core_web_sm')
-    if request.method =="POST":
-        lemma_area = request.POST.get('lemma-form')
-        doc = nlp(lemma_area)
-        lemma_list = []
-        for token in doc:
-            lemma_list.append(token.lemma_)
-        return render(request, 'lemma.html', {'lemma_list': lemma_list})
+    if request.method == 'POST':
+        text = request.POST.get('inputText')
+        nlp = spacy.load("en_core_web_sm")
+        doc = nlp(text)
+        lemmas = [token.lemma_ for token in doc]
+        return render(request, 'lemma.html', {'lemmas': lemmas})
     else:
         return render(request, 'lemma.html')
 
@@ -34,5 +32,12 @@ def pos(request):
     return render(request, 'pos.html')
 
 def ner(request):
-    return render(request, 'ner.html')
+    if request.method == 'POST':
+        text = request.POST.get('inputText')
+        nlp = spacy.load("en_core_web_sm")
+        doc = nlp(text)
+        entities = [(ent.text, ent.label_) for ent in doc.ents]
+        return render(request, 'ner.html', {'entities': entities})
+    else:
+        return render(request, 'ner.html')
 
