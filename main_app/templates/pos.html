@@ -11,6 +11,13 @@
         </form>
         <div id="result" class="mt-4">
             <!-- Results will be displayed here -->
+            {% if pos_tags %}
+            <ul>
+                {% for word, tag in pos_tags %}
+                    <li>{{ word }}: {{ tag }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
         </div>
     </div>
 {% endblock %}

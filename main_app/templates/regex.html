@@ -13,6 +13,13 @@
         </form>
         <div id="result" class="mt-4">
             <!-- Results will be displayed here -->
+            {% if regex_phone %}
+            <ul>
+                {% for phone in regex_phone %}
+                    <li>{{ phone }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
         </div>
     </div>
 {% endblock %}

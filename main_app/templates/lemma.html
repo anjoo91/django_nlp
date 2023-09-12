@@ -12,6 +12,13 @@
         </form>
         <div id="result" class="mt-4">
             <!-- Results will be displayed here -->
+            {% if lemmas %}
+            <ul>
+                {% for lemma in lemmas %}
+                    <li>{{ lemma }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
         </div>
     </div>
 {% endblock %}

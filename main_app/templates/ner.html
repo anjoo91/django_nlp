@@ -11,6 +11,13 @@
         </form>
         <div id="result" class="mt-4">
             <!-- Results will be displayed here -->
+            {% if entities %}
+            <ul>
+                {% for entity, label in entities %}
+                    <li>{{ entity }}: {{ label }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
         </div>
     </div>
 {% endblock %}
