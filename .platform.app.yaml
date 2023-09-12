@@ -7,7 +7,7 @@ name: django_nlp
 # in multiple versions. Check the Python documentation
 # (https://docs.platform.sh/languages/python.html#supported-versions)
 # to find the supported versions for the 'python' type.
-type: 'python:3.11'
+type: 'python:3.10'
 
 # The following block defines a single writable directory, 'web/uploads'
 # The 'source' specifies where the writable mount is. The 'local' source
@@ -21,15 +21,6 @@ mounts:
 
 # The size of the persistent disk of the application (in MB).
 disk: 2048
-
-# The relationships of the application with services or other applications.
-#
-# The left-hand side is the name of the relationship as it will be exposed
-# to the application in the PLATFORM_RELATIONSHIPS variable. The right-hand
-# side is in the form '<service name>:<endpoint name>'.
-relationships:
-    postgresdatabase: 'dbpostgres:postgresql'
-
 
 hooks:
     build: |
