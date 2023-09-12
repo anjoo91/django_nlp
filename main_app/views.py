@@ -12,7 +12,8 @@ def home(request):
 def regex(request):
     if request.method =="POST":
         phonepattern=r'(\d{3})-(\d{3})-(\d{4})'
-        regex_area = request.POST.get('regex-form')
+        regex_area = request.POST['regex-form']
+        print("Debug:", regex_area)
         regex_phone=re.findall(phonepattern, regex_area)
         return render(request, 'regex.html', {'regex_phone': regex_phone})
     else:
