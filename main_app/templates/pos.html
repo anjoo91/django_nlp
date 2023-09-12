@@ -3,6 +3,7 @@
     <div class="container mt-5">
         <h1 class="text-center">Part of Speech Tagging</h1>
         <form id="pos-form" class="mt-4" method = "POST" action="{% url 'pos' %}">
+            {% csrf_token %}
             <div class="mb-3">
                 <label for="inputText" class="form-label">Enter Text</label>
                 <textarea class="form-control" id="inputText" name = "pos-form" rows="3"></textarea>
@@ -15,9 +16,15 @@
             <div class="row">
                 {% for word, tag in pos_tags %}
                     <div class="col-md-4">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                {{ word }}: {{ tag }}
+                        <div class="card mb-4 shadow-sm" style="border: 2px solid #007bff; border-radius: 15px;">
+                            <div class="card-header bg-primary text-white" style="border-radius: 13px 13px 0 0;">
+                                <h5 class="card-title">POS Tag</h5>
+                            </div>
+                            <div class="card-body" style="background-color: #f1f1f1;">
+                                <p class="card-text" style="font-size: 18px; font-weight: bold;">{{ word }}: {{ tag }}</p>
+                            </div>
+                            <div class="card-footer bg-light">
+                                <small class="text-muted">Part of Speech</small>
                             </div>
                         </div>
                     </div>

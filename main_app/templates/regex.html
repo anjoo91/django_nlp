@@ -17,9 +17,15 @@
             <div class="row">
                 {% for phone in regex_phone %}
                     <div class="col-md-4">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                {{ phone }}
+                        <div class="card mb-4 shadow-sm" style="border: 2px solid #007bff; border-radius: 15px;">
+                            <div class="card-header bg-primary text-white" style="border-radius: 13px 13px 0 0;">
+                                <h5 class="card-title">Phone Number</h5>
+                            </div>
+                            <div class="card-body" style="background-color: #f1f1f1;">
+                                <p class="card-text" style="font-size: 18px; font-weight: bold;">{{ phone }}</p>
+                            </div>
+                            <div class="card-footer bg-light">
+                                <small class="text-muted">US Format</small>
                             </div>
                         </div>
                     </div>
