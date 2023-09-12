@@ -12,11 +12,17 @@
         <div id="result" class="mt-4">
             <!-- Results will be displayed here -->
             {% if pos_tags %}
-            <ul>
+            <div class="row">
                 {% for word, tag in pos_tags %}
-                    <li>{{ word }}: {{ tag }}</li>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                {{ word }}: {{ tag }}
+                            </div>
+                        </div>
+                    </div>
                 {% endfor %}
-            </ul>
+            </div>
             {% endif %}
         </div>
     </div>
