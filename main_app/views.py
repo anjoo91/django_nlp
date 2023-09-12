@@ -29,15 +29,22 @@ def lemma(request):
         return render(request, 'lemma.html')
 
 def pos(request):
-    return render(request, 'pos.html')
+    nlp = spacy.load('en_core_web_sm')
+    if request.method == "POST":
+        pos_area = request.POST.get('pos-form')
+        doc = nlp(pos_area)
+        pos_list = [(token.text, token.pos_) for token in doc]
+        return render(request, 'pos.html', {'pos_list': pos_list})
+    else:
+        return render(request, 'pos.html')
 
 def ner(request):
-    if request.method == 'POST':
-        text = request.POST.get('inputText')
-        nlp = spacy.load("en_core_web_sm")
-        doc = nlp(text)
-        entities = [(ent.text, ent.label_) for ent in doc.ents]
-        return render(request, 'ner.html', {'entities': entities})
+    nlp = spacy.load('en_core_web_sm')
+    if request.method == "POST":
+        ner_area = request.POST.get('ner-form')
+        doc = nlp(ner_area)
+        ner_list = [(ent.text, ent.label_) for ent in doc.ents]
+        return render(request, 'ner.html', {'ner_list': ner_list})
     else:
         return render(request, 'ner.html')
 
