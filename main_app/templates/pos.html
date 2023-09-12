@@ -2,14 +2,14 @@
 {% block pos_content %}
     <div class="container mt-5">
         <h1 class="text-center">Part of Speech Tagging</h1>
-        <form id="pos-form" class="mt-4" method = "POST" action="{% url 'pos' %}">
+        <form id="pos-form" class="mt-4 bg-light p-4 rounded" method="POST" action="{% url 'pos' %}">
             {% csrf_token %}
             <div class="mb-3">
                 <label for="inputText" class="form-label">Enter Text</label>
-                <textarea class="form-control" id="inputText" name = "pos-form" rows="3"></textarea>
+                <textarea class="form-control" id="inputText" name="pos-form" rows="3"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Tag Parts of Speech</button>
-        </form>
+        </form>        
         <div id="result" class="mt-4">
             <!-- Results will be displayed here -->
             {% if zipped_pos %}
