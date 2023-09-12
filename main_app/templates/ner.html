@@ -12,16 +12,17 @@
         </form>
         <div id="result" class="mt-4">
             <!-- Results will be displayed here -->
-            {% if entities %}
+            {% if zipped_ner %}
             <div class="row">
-                {% for entity, label in entities %}
+                {% for entity, label, explain in zipped_ner %}
                     <div class="col-md-4">
                         <div class="card mb-4 shadow-sm" style="border: 2px solid #007bff; border-radius: 15px;">
-                            <div class="card-header bg-primary text-white" style="border-radius: 13px 13px 0 0;">
-                                <h5 class="card-title">Entity</h5>
-                            </div>
                             <div class="card-body" style="background-color: #f1f1f1;">
-                                <p class="card-text" style="font-size: 18px; font-weight: bold;">{{ entity }}: {{ label }}</p>
+                                <p class="card-text" style="font-size: 18px;">
+                                    <strong>Entity:</strong> {{ entity }}<br>
+                                    <strong>Label:</strong> {{ label }}<br>
+                                    <strong>Explanation:</strong> {{ explain }}
+                                </p>
                             </div>
                             <div class="card-footer bg-light">
                                 <small class="text-muted">Named Entity</small>

@@ -25,11 +25,16 @@ def lemma(request):
     if request.method == 'POST':
         lemma_area = request.POST['lemma-form']
         lemma_area = nlp(lemma_area)
+        print("Inside POST block")
+        print("Lemma Area:", lemma_area)
         token_list = [i.text for i in lemma_area]
         tokens=[i for i in token_list]
+        print(tokens)
         lemmas_list = [i.lemma_ for i in lemma_area]
         lemmas=[i for i in lemmas_list]
-        return render(request, 'lemma.html', {'unprocessed': tokens, 'lemmatized': lemmas})
+        print(lemmas)
+        zipped_words = zip(tokens, lemmas)
+        return render(request, 'lemma.html', {'zipped_words': zipped_words})
     else:
         return render(request, 'lemma.html')
 
@@ -44,7 +49,8 @@ def pos(request):
         pos_results = [i for i in pos_results_list] 
         explain_pos_list=[spacy.explain(i) for i in pos_results]  
         explain_individual_pos=[i for i in explain_pos_list]
-        return render(request, 'pos.html', {'unpossed': pos_tokens, 'possed': pos_results, 'explain_pos': explain_individual_pos})
+        zipped_pos = zip(pos_tokens, pos_results, explain_individual_pos)
+        return render(request, 'pos.html', {'zipped_pos': zipped_pos})
     else:
         return render(request, 'pos.html')
 
@@ -58,7 +64,10 @@ def ner(request):
         onlylabels = [i.label_ for i in ner_area.ents]
         ner_explain_list = [spacy.explain(i) for i in onlylabels]
         ner_explain_individual=[i for i in ner_explain_list]
-        return render(request, 'ner.html', {'nertokenslabels': ner_tokenslabels, 'ner_explain': ner_explain_individual})
+        zipped_ner = zip((entity for entity, label in ner_tokenslabels), 
+                     (label for entity, label in ner_tokenslabels), 
+                     ner_explain_individual)
+        return render(request, 'ner.html', {'zipped_ner': zipped_ner})
     else:
         return render(request, 'ner.html')
 

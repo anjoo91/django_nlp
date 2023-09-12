@@ -12,16 +12,16 @@
         </form>
         <div id="result" class="mt-4">
             <!-- Results will be displayed here -->
-            {% if lemmas %}
+            {% if zipped_words %}
             <div class="row">
-                {% for lemma in lemmas %}
+                {% for unproc, lemma in zipped_words %}
                     <div class="col-md-4">
                         <div class="card mb-4 shadow-sm" style="border: 2px solid #007bff; border-radius: 15px;">
-                            <div class="card-header bg-primary text-white" style="border-radius: 13px 13px 0 0;">
-                                <h5 class="card-title">Lemma</h5>
-                            </div>
                             <div class="card-body" style="background-color: #f1f1f1;">
-                                <p class="card-text" style="font-size: 18px; font-weight: bold;">{{ lemma }}</p>
+                                <p class="card-text" style="font-size: 18px;">
+                                    <strong>Original:</strong> {{ unproc }}<br>
+                                    <strong>Lemmatized:</strong> {{ lemma }}
+                                </p>
                             </div>
                             <div class="card-footer bg-light">
                                 <small class="text-muted">Lemmatized Word</small>
