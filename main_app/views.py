@@ -15,6 +15,7 @@ def regex(request):
         regex_area = request.POST['regex-form']
         print("Debug:", regex_area)
         regex_phone=re.findall(phonepattern, regex_area)
+        print(regex_phone)
         return render(request, 'regex.html', {'regex_phone': regex_phone})
     else:
         return render(request, 'regex.html')
