@@ -10,5 +10,10 @@
       "src": "/(.*)",
       "dest": "django_nlp/wsgi.py"
     }
-  ]
+  ],
+  "build": {
+    "env": {
+      "DJANGO_SETTINGS_MODULE": "django_nlp.settings"
+    }
+  }
 }
