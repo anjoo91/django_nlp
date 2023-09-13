@@ -52,29 +52,6 @@ This project integrates Natural Language Processing (NLP) with web development u
 - MVT Framework (Django)
 - Heroku
 
-## Setup
-
-1. Clone the repository:
-   ```bash
-   git clone <repository_url>
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd django_nlp
-   ```
-3. Install dependencies using Poetry:
-   ```bash
-   poetry install
-   ```
-4. Run migrations:
-   ```bash
-   python manage.py migrate
-   ```
-5. Start the development server:
-   ```bash
-   python manage.py runserver
-   ```
-
 ## Deployment
 
 The project is deployed on Heroku. Follow the Heroku deployment guide for Django applications to deploy your own version.
