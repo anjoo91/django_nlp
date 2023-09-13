@@ -16,15 +16,15 @@ This project integrates Natural Language Processing (NLP) with web development u
 
 # Screenshots
 
-![Home Page](https://ibb.co/5nX6HWP)
+![Home Page](https://i.ibb.co/HxLV8Dj/home.png)
 
-![RegEx Page](https://ibb.co/DQ3FpqQ)
+![RegEx Page](https://i.ibb.co/PgByQSg/regex.png)
 
-![Lemma Page](https://ibb.co/JjBxnKM)
+![Lemma Page](https://i.ibb.co/pj0W2x9/lemma.png)
 
-![POS Page](https://ibb.co/sQNCsJV)
+![POS Page](https://i.ibb.co/q9cCmFr/pos.png)
 
-![NER Page](https://ibb.co/ZS09mGQ)
+![NER Page](https://i.ibb.co/3vnKz4x/ner.png)
 
 ## Technologies Used
 
