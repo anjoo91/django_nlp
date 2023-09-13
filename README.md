@@ -14,6 +14,18 @@ This project integrates Natural Language Processing (NLP) with web development u
 - **Part of Speech Tagging**: Tags each word in the text with its corresponding part of speech.
 - **Named Entity Recognition**: Identifies entities like names, organizations, locations, etc., in the text.
 
+# Screenshots
+
+![Home Page](https://ibb.co/5nX6HWP)
+
+![RegEx Page](https://ibb.co/DQ3FpqQ)
+
+![Lemma Page](https://ibb.co/JjBxnKM)
+
+![POS Page](https://ibb.co/sQNCsJV)
+
+![NER Page](https://ibb.co/ZS09mGQ)
+
 ## Technologies Used
 
 - Django

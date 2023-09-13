@@ -59,8 +59,10 @@ def ner(request):
     if request.method == "POST":
         ner_area = request.POST['ner-form']
         ner_area = nlp(ner_area)
+        print('Inside POST block', ner_area)
         ner_tokenslabels_list = [(i.text, i.label_) for i in ner_area.ents]
         ner_tokenslabels = [i for i in ner_tokenslabels_list]
+        print('token labels:', ner_tokenslabels)
         onlylabels = [i.label_ for i in ner_area.ents]
         ner_explain_list = [spacy.explain(i) for i in onlylabels]
         ner_explain_individual=[i for i in ner_explain_list]
