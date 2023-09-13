@@ -28,7 +28,6 @@ This project integrates Natural Language Processing (NLP) with web development u
 **POS Page**
 ![POS Page](https://i.ibb.co/q9cCmFr/pos.png)
 
-
 **NER Page**
 ![NER Page](https://i.ibb.co/3vnKz4x/ner.png)
 
