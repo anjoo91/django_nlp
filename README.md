@@ -14,7 +14,7 @@ This project integrates Natural Language Processing (NLP) with web development u
 - **Part of Speech Tagging**: Tags each word in the text with its corresponding part of speech.
 - **Named Entity Recognition**: Identifies entities like names, organizations, locations, etc., in the text.
 
-# Screenshots
+## Screenshots
 
 **Home Page**
 
