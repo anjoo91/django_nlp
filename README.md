@@ -1,4 +1,6 @@
 # WebNLP
+# Live Link: 
+https://django-nlp-fdc565844cf0.herokuapp.com
 
 ## Overview
 
@@ -18,6 +20,10 @@ This project integrates Natural Language Processing (NLP) with web development u
 - Python
 - Bootstrap
 - HTML, CSS, JavaScript
+- spaCy
+- Natural Language Processing
+- MVT Framework (Django)
+- Heroku
 
 ## Setup
 
@@ -57,4 +63,4 @@ The project is deployed on Heroku. Follow the Heroku deployment guide for Django
 
 ## Author
 
-- [Your Name]
+- anjoo91
